@@ -1,21 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * main -  a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
+ * main - Prints the alphabet without q and e.
  *
- * Return - Always (0) success
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char alpha[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int i;
 
-	for (i = 0; i < 52; i++)
+	for (i = 97; i < 123; i++)
 	{
-		putchar(alpha[i]);
+		if (i != 101 && i != 113)
+		{
+			putchar(i);
+		}
 	}
-
 	putchar('\n');
 	return (0);
 }
