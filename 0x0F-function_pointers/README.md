@@ -1,0 +1,2 @@
+readme for function pointers
+
