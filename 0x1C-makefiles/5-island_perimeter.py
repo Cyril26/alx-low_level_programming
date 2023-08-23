@@ -8,14 +8,14 @@ def island_perimeter(grid):
     Args:
         grid (list): grid
     """
-    m, n = len(grid), len(grid[0])
-    land, neighbour = 0, 0
-    for i in range(m):
-        for j in range(n):
-            if grid[i][j] == 1:
-                land += 1
-                if i < m - 1 and grid[i+1][j] == 1:
-                    neighbour += 1
-                if j < n - 1 and grid[i][j + 1] == 1:
-                    neighbour += 1
-    return land * 4 - 2 * neighbour
+    rows, columns = len(grid), len(grid[0])
+    perimeter = 0
+    for row in range(rows):
+        for col in range(columns):
+            if grid[row][col] == 1:
+                perimeter += 4
+                if row > 0 and grid[row - 1][col] == 1:
+                    perimeter -= 2  # Deduct 2 sides for adjacent land cells
+                if col > 0 and grid[row][col - 1] == 1:
+                    perimeter -= 2
+    return perimeter
